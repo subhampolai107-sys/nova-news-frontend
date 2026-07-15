@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article - NOVA NEWS</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- PAGE BANNER -->
+
+    <section class="page-banner">
+        <h1 id="articleTitle">Loading...</h1>
+        <p id="articleCategory">News</p>
+    </section>
+
+    <!-- ARTICLE -->
+
+    <section class="article-container">
+
+        <img id="articleImage" src="images/news1.jpg" alt="Article Image">
+
+        <div class="article-meta">
+            <strong>Author:</strong>
+            <span id="articleAuthor">Admin</span>
+
+            |
+
+            <strong>Date:</strong>
+            <span id="articleDate"></span>
+        </div>
+
+        <p id="articleDescription">
+            Loading article...
+        </p>
+
+    </section>
+
+    <!-- COMMENT SECTION -->
+
+    <section class="comment-section">
+
+        <h2>Comments</h2>
+
+        <form id="commentForm">
+
+            <input
+                type="text"
+                id="commentName"
+                placeholder="Your Name"
+                required>
+
+            <textarea
+                id="commentText"
+                placeholder="Write Comment..."
+                required></textarea>
+
+            <button type="submit">
+                Post Comment
+            </button>
+
+        </form>
+
+        <div id="commentList"></div>
+
+    </section>
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+    <script src="article.js"></script>
+
+</body>
+
+</html>

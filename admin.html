@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+  content="width=device-width, initial-scale=1.0">
+
+  <title>Admin Panel - NOVA NEWS</title>
+
+   <link rel="stylesheet" href="style.css">
+   <script src="auth-guard.js"></script>
+
+</head>
+
+<body>
+
+  <!-- ADMIN PANEL -->
+
+  <section class="admin-panel">
+
+    <h1>
+      Upload News
+    </h1>
+
+    <!-- FORM -->
+
+    <form id="newsForm">
+
+      <!-- TITLE -->
+
+      <input
+      type="text"
+      id="newsTitle"
+      placeholder="News Title"
+      required>
+
+      <!-- IMAGE -->
+<input
+type="text"
+id="newsImage"
+placeholder="Image URL"
+required>
+
+<!-- CATEGORY (naya) -->
+<select id="newsCategory" required>
+  <option value="">Select Category</option>
+  <option value="news">News</option>
+  <option value="world">World</option>
+  <option value="business">Business</option>
+  <option value="market">Market</option>
+  <option value="technology">Technology</option>
+  <option value="sports">Sports</option>
+  <option value="health">Health</option>
+  <option value="education">Education</option>
+</select>
+
+<!-- DESCRIPTION -->
+<textarea
+id="newsDescription"
+placeholder="News Description"
+required></textarea>
+
+      <!-- BUTTON -->
+
+      <button type="submit">
+
+        Publish News
+
+      </button>
+
+    </form>
+
+<!-- MANAGE NEWS -->
+<h2>Manage News</h2>
+<div id="articlesList"></div>
+
+  </section>
+
+    <script src="admin.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NOVA NEWS</title>
+
+  <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- CSS FILE -->
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- GOOGLE FONT -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+  <!-- TOP HEADER -->
+
+  <div class="top-header">
+
+    <div class="breaking">
+      ⚡ Breaking: AI Technology Is Changing The World
+    </div>
+
+    <div class="social-icons">
+
+      <i class="fab fa-facebook-f"></i>
+
+      <i class="fab fa-instagram"></i>
+
+      <i class="fab fa-youtube"></i>
+
+      <i class="fab fa-twitter"></i>
+
+    </div>
+
+  </div>
+
+  <!-- TOP BAR -->
+
+<div class="top-bar">
+
+  <!-- DATE -->
+
+  <div id="liveDate"></div>
+
+  <!-- TIME -->
+
+  <div id="liveTime"></div>
+
+</div>
+
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <div class="logo">
+
+  <img src="images/logo.jpeg" alt="NOVA NEWS Logo">
+
+  <h2>NOVA <span>NEWS</span></h2>
+
+</div>
+
+    <div class="nav-right">
+
+      <ul class="nav-links">
+
+  <li><a href="index.html">Home</a></li>
+
+  <li><a href="news.html">News</a></li>
+
+  <li><a href="world.html">World</a></li>
+
+  <li><a href="business.html">Business</a></li>
+
+  <li><a href="market.html">Market</a></li>
+
+  <li><a href="technology.html">Technology</a></li>
+
+  <li><a href="sports.html">Sports</a></li>
+
+  <li><a href="health.html">Health</a></li>
+
+  <li><a href="education.html">Education</a></li>
+
+</ul>
+
+  <!-- SEARCH BUTTON -->
+
+  <div class="search-btn">
+
+  <i class="fas fa-search"></i>
+
+</div>
+
+    <!-- SEARCH BOX -->
+
+<div class="search-box" id="searchBox">
+
+  <input
+  type="text"
+  id="searchInput"
+  placeholder="Search news...">
+
+</div>
+
+  <!-- LOGIN BUTTON -->
+
+<a href="login.html"
+class="login-btn">
+
+  Login
+
+</a>
+
+<!-- SIGNUP BUTTON -->
+
+<a href="signup.html"
+class="signup-btn">
+
+  Sign Up
+
+</a>
+
+</div>
+
+      <div class="menu-btn" id="menuBtn">
+        ☰
+      </div>
+
+    </div>
+
+  </nav>
+
+  <!-- HERO SECTION -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>
+
+        Stay Informed.<br>
+
+        <span>Stay Ahead.</span>
+
+      </h1>
+
+      <p>
+
+        Your trusted source for modern digital news,
+        AI updates, business insights and global stories.
+
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#" class="btn gold-btn">
+          Explore News
+        </a>
+
+        <a href="#" class="btn outline-btn">
+          Watch Live
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- STORIES -->
+
+  <h2 class="section-title">
+
+    Top <span>Stories</span>
+
+  </h2>
+
+  <section class="stories">
+
+    <div class="card">
+
+      <img src="images/news1.jpg">
+
+      <div class="card-content">
+
+        <div class="tag">
+          WORLD
+        </div>
+
+        <h3>
+          Global Climate Summit Begins Today
+        </h3>
+
+        <p>
+          Leaders around the world gather for future climate discussions.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="card">
+
+      <img src="images/news2.jpg">
+
+      <div class="card-content">
+
+        <div class="tag">
+          AI NEWS
+        </div>
+
+        <h3>
+          Artificial Intelligence Is Reshaping Business
+        </h3>
+
+        <p>
+          AI technologies continue transforming industries worldwide.
+        </p>
+
+      </div>
+
+    </div>
+
+    <a href="article.html" class="card searchable">
+
+      <img src="images/news3.jpg">
+
+      <div class="card-content">
+
+        <div class="tag">
+          SPORTS
+        </div>
+
+        <h3>
+          Championship Finals Create Global Excitement
+        </h3>
+
+        <p>
+          Fans prepare for one of the biggest sports events this year.
+        </p>
+
+      </div>
+
+    </a>
+
+  </section>
+
+  <section class="latest-news">
+  <h2>Latest News</h2>
+
+  <div id="storiesContainer" class="news-grid">
+    <!-- News cards will appear here -->
+  </div>
+</section>
+
+  <!-- NEWSLETTER -->
+
+  <section class="newsletter">
+
+    <h2>
+
+      Subscribe For Daily Updates
+
+    </h2>
+
+    <p>
+
+      Get premium breaking news directly in your inbox.
+
+    </p>
+
+    <div class="newsletter-form">
+
+      <input type="email" placeholder="Enter your email">
+
+      <button>
+        Subscribe
+      </button>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-content">
+
+      <div class="footer-box">
+
+        <h3>NOVA NEWS</h3>
+
+        <p>
+
+          Premium digital news platform with global updates.
+
+        </p>
+
+      </div>
+
+      <div class="footer-box">
+
+        <h3>Quick Links</h3>
+
+        <a href="#">Home</a>
+
+        <a href="#">Latest</a>
+
+        <a href="#">Technology</a>
+
+      </div>
+
+      <div class="footer-box">
+
+        <h3>Follow Us</h3>
+
+        <a href="#">Facebook</a>
+
+        <a href="#">Instagram</a>
+
+        <a href="#">YouTube</a>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      © 2026 NOVA NEWS. All Rights Reserved.
+
+    </div>
+
+  </footer>
+
+  <!-- JAVASCRIPT -->
+
+  <script src="script.js"></script>
+  <script src="news.js"></script>
+
+</body>
+
+</html>

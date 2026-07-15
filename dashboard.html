@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+  content="width=device-width, initial-scale=1.0">
+
+  <title>Admin Dashboard</title>
+
+   <link rel="stylesheet" href="style.css">
+   <script src="auth-guard.js"></script>
+
+</head>
+
+<body>
+
+  <!-- DASHBOARD -->
+
+  <section class="dashboard">
+
+    <!-- SIDEBAR -->
+
+    <div class="sidebar">
+
+      <h2>NOVA NEWS</h2>
+
+      <ul>
+
+        <li>Dashboard</li>
+
+        <li>Upload News</li>
+
+        <li>Manage Articles</li>
+
+        <li>Users</li>
+
+        <li>Settings</li>
+
+      </ul>
+
+    </div>
+
+    <!-- MAIN CONTENT -->
+
+    <div class="dashboard-content">
+
+      <h1>
+        Admin Dashboard
+      </h1>
+
+      <!-- STATS -->
+
+      <div class="dashboard-cards">
+
+        <!-- CARD -->
+
+        <div class="dashboard-card">
+
+          <h2>120</h2>
+
+          <p>Total Articles</p>
+
+        </div>
+
+        <!-- CARD -->
+
+        <div class="dashboard-card">
+
+          <h2>45K</h2>
+
+          <p>Total Visitors</p>
+
+        </div>
+
+        <!-- CARD -->
+
+        <div class="dashboard-card">
+
+          <h2>350</h2>
+
+          <p>Registered Users</p>
+
+        </div>
+
+      </div>
+
+      <!-- AI NEWS GENERATOR -->
+
+<div class="ai-generator">
+
+  <h2>
+    AI News Generator
+  </h2>
+
+  <!-- INPUT -->
+
+  <input
+  type="text"
+  id="aiTopic"
+  placeholder="Enter News Topic">
+
+  <!-- BUTTON -->
+
+  <button id="generateNews">
+
+    Generate AI News
+
+  </button>
+
+</div>
+
+      <!-- NEWS UPLOAD -->
+
+      <div class="upload-box">
+
+        <h2>
+          Upload News
+        </h2>
+
+        <form id="dashboardNewsForm">
+
+          <!-- TITLE -->
+
+          <input
+          type="text"
+          id="dashboardTitle"
+          placeholder="News Title"
+          required>
+
+          <!-- IMAGE -->
+
+          <input
+          type="text"
+          id="dashboardImage"
+          placeholder="Image URL"
+          required>
+
+          <!-- DESCRIPTION -->
+
+          <textarea
+          id="dashboardDescription"
+          placeholder="News Description"
+          required></textarea>
+
+          <!-- BUTTON -->
+
+          <button type="submit">
+
+            Publish News
+
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <script src="dashboard.js"></script>
+
+</body>
+
+</html>
