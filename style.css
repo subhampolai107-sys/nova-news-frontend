@@ -665,10 +665,19 @@ footer{
         display:block;
     }
 
+    .nav-right{
+        gap:8px;
+    }
+
     .login-btn,
-    .signup-btn,
+    .signup-btn{
+        padding:8px 12px;
+        font-size:13px;
+    }
+
     .search-btn{
-        display:none;
+        width:34px;
+        height:34px;
     }
 
 }
