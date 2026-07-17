@@ -1,6 +1,6 @@
 async function loadNews() {
   try {
-    const response = await fetch('http://localhost:5000/api/articles');
+    const response = await fetch(https://nova-news-backend.onrender.com);
     const articles = await response.json();
 
     const container = document.getElementById('storiesContainer');
@@ -30,9 +30,11 @@ async function loadNews() {
     container.innerHTML = '';
 
     filteredArticles.forEach(article => {
-      const card = document.createElement('a');
-      card.href = `article.html?id=${article._id}`;
-      card.className = '';   
+      const card = document.createElement("div");
+      card.onclick = () => {
+    window.location.href = `article.html?id=${article._id}`;
+};
+      card.className = "card"; 
 
       card.innerHTML = `
         <img src="${article.imageUrl || 'images/news1.jpg'}" alt="${article.title}">

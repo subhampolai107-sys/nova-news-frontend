@@ -1,265 +1,155 @@
+// ===============================
 // MOBILE MENU
+// ===============================
 
 const menuBtn = document.getElementById("menuBtn");
-
 const navLinks = document.querySelector(".nav-links");
 
-menuBtn.addEventListener("click", () => {
-
-  navLinks.classList.toggle("active");
-
+menuBtn.addEventListener("click", function () {
+    navLinks.classList.toggle("active");
 });
+
+// ===============================
 // SEARCH BUTTON
+// ===============================
 
-const searchBtn =
-document.querySelector(".search-btn");
+const searchBtn = document.querySelector(".search-btn");
+const searchBox = document.getElementById("searchBox");
+const searchInput = document.getElementById("searchInput");
 
-const searchBox =
-document.getElementById("searchBox");
+if (searchBtn && searchBox) {
+    searchBtn.addEventListener("click", () => {
 
-const searchInput =
-document.getElementById("searchInput");
+        if (searchBox.style.display === "block") {
+            searchBox.style.display = "none";
+        } else {
+            searchBox.style.display = "block";
+        }
 
-// OPEN SEARCH BOX
+    });
+}
 
-searchBtn.addEventListener("click", () => {
+// ===============================
+// SEARCH REDIRECT
+// ===============================
 
-  if(searchBox.style.display === "block"){
+if (searchInput) {
 
-    searchBox.style.display = "none";
+    searchInput.addEventListener("keypress", function (e) {
 
-  }
+        if (e.key === "Enter") {
 
-  else{
+            const value = searchInput.value.toLowerCase().trim();
 
-    searchBox.style.display = "block";
+            const pages = {
+                home: "index.html",
+                news: "news.html",
+                world: "world.html",
+                business: "business.html",
+                market: "market.html",
+                technology: "technology.html",
+                sports: "sports.html",
+                health: "health.html",
+                education: "education.html"
+            };
 
-  }
+            if (pages[value]) {
+                window.location.href = pages[value];
+            } else {
+                alert("Page not found");
+            }
 
-});
+        }
 
-// SEARCH PAGE REDIRECT
+    });
 
-searchInput.addEventListener("keypress", function(e){
+}
 
-  if(e.key === "Enter"){
-
-    let value =
-    searchInput.value.toLowerCase();
-
-    // HOME
-
-    if(value === "home"){
-
-      window.location.href = "index.html";
-
-    }
-
-    // NEWS
-
-    else if(value === "news"){
-
-      window.location.href = "news.html";
-
-    }
-
-    // WORLD
-
-    else if(value === "world"){
-
-      window.location.href = "world.html";
-
-    }
-
-    // BUSINESS
-
-    else if(value === "business"){
-
-      window.location.href = "business.html";
-
-    }
-
-    // MARKET
-
-    else if(value === "market"){
-
-      window.location.href = "market.html";
-
-    }
-
-    // TECHNOLOGY
-
-    else if(value === "technology"){
-
-      window.location.href = "technology.html";
-
-    }
-
-    // SPORTS
-
-    else if(value === "sports"){
-
-      window.location.href = "sports.html";
-
-    }
-
-    // HEALTH
-
-    else if(value === "health"){
-
-      window.location.href = "health.html";
-
-    }
-
-    // EDUCATION
-
-    else if(value === "education"){
-
-      window.location.href = "education.html";
-
-    }
-
-    // PAGE NOT FOUND
-
-    else{
-
-      alert("Page not found");
-
-    }
-
-  }
-
-});
+// ===============================
 // LIVE DATE & TIME
+// ===============================
 
-function updateDateTime(){
+function updateDateTime() {
 
-  const now = new Date();
+    const now = new Date();
 
-  // DATE
+    const options = {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+    };
 
-  const options = {
+    const currentDate = now.toLocaleDateString("en-US", options);
+    const currentTime = now.toLocaleTimeString();
 
-    weekday:'long',
+    const liveDate = document.getElementById("liveDate");
+    const liveTime = document.getElementById("liveTime");
 
-    year:'numeric',
-
-    month:'long',
-
-    day:'numeric'
-
-  };
-
-  const currentDate =
-  now.toLocaleDateString(
-  'en-US',
-  options
-  );
-
-  // TIME
-
-  const currentTime =
-  now.toLocaleTimeString();
-
-  // SHOW DATE
-
-  document.getElementById(
-  "liveDate"
-  ).innerHTML = currentDate;
-
-  // SHOW TIME
-
-  document.getElementById(
-  "liveTime"
-  ).innerHTML = currentTime;
+    if (liveDate) liveDate.innerHTML = currentDate;
+    if (liveTime) liveTime.innerHTML = currentTime;
 
 }
 
-// UPDATE EVERY SECOND
-
-setInterval(updateDateTime,1000);
-
+setInterval(updateDateTime, 1000);
 updateDateTime();
+
+// ===============================
 // SHOW UPLOADED NEWS
+// ===============================
 
-document.getElementById(
-"uploadedTitle"
-).innerHTML =
-localStorage.getItem("newsTitle");
+const uploadedTitle = document.getElementById("uploadedTitle");
+const uploadedImage = document.getElementById("uploadedImage");
+const uploadedDescription = document.getElementById("uploadedDescription");
 
-document.getElementById(
-"uploadedImage"
-).src =
-localStorage.getItem("newsImage");
+if (uploadedTitle && uploadedImage && uploadedDescription) {
 
-document.getElementById(
-"uploadedDescription"
-).innerHTML =
-localStorage.getItem("newsDescription");
-// COMMENT SYSTEM
+    uploadedTitle.innerHTML =
+        localStorage.getItem("newsTitle") || "";
 
-const commentForm =
-document.getElementById(
-"commentForm"
-);
+    uploadedImage.src =
+        localStorage.getItem("newsImage") || "images/news1.jpg";
 
-const commentList =
-document.getElementById(
-"commentList"
-);
-
-// CHECK FORM
-
-if(commentForm){
-
-  commentForm.addEventListener(
-  "submit",
-
-  function(e){
-
-    e.preventDefault();
-
-    // VALUES
-
-    const name =
-    document.getElementById(
-    "commentName"
-    ).value;
-
-    const text =
-    document.getElementById(
-    "commentText"
-    ).value;
-
-    // CREATE COMMENT
-
-    const commentBox =
-    document.createElement("div");
-
-    commentBox.classList.add(
-    "comment-box"
-    );
-
-    // COMMENT HTML
-
-    commentBox.innerHTML = `
-
-      <h3>${name}</h3>
-
-      <p>${text}</p>
-
-    `;
-
-    // SHOW COMMENT
-
-    commentList.prepend(
-    commentBox
-    );
-
-    // RESET FORM
-
-    commentForm.reset();
-
-  });
+    uploadedDescription.innerHTML =
+        localStorage.getItem("newsDescription") || "";
 
 }
+
+// ===============================
+// COMMENT SYSTEM
+// ===============================
+
+const commentForm = document.getElementById("commentForm");
+const commentList = document.getElementById("commentList");
+
+if (commentForm && commentList) {
+
+    commentForm.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        const name =
+            document.getElementById("commentName").value;
+
+        const text =
+            document.getElementById("commentText").value;
+
+        const commentBox =
+            document.createElement("div");
+
+        commentBox.classList.add("comment-box");
+
+        commentBox.innerHTML = `
+            <h3>${name}</h3>
+            <p>${text}</p>
+        `;
+
+        commentList.prepend(commentBox);
+
+        commentForm.reset();
+
+    });
+
+}
+
+console.log("NOVA NEWS Script Loaded Successfully");

@@ -71,84 +71,41 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
   <nav>
 
-    <div class="logo">
+  <div class="logo">
+    <img src="images/logo.jpeg" alt="NOVA NEWS Logo">
+    <h2>NOVA <span>NEWS</span></h2>
+  </div>
 
-  <img src="images/logo.jpeg" alt="NOVA NEWS Logo">
-
-  <h2>NOVA <span>NEWS</span></h2>
-
+  <div class="menu-btn" id="menuBtn">
+  ☰
 </div>
 
-    <div class="nav-right">
-
-      <ul class="nav-links">
-
-  <li><a href="index.html">Home</a></li>
-
-  <li><a href="news.html">News</a></li>
-
-  <li><a href="world.html">World</a></li>
-
-  <li><a href="business.html">Business</a></li>
-
-  <li><a href="market.html">Market</a></li>
-
-  <li><a href="technology.html">Technology</a></li>
-
-  <li><a href="sports.html">Sports</a></li>
-
-  <li><a href="health.html">Health</a></li>
-
-  <li><a href="education.html">Education</a></li>
-
-</ul>
-
-  <!-- SEARCH BUTTON -->
+<div class="nav-right">
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="world.html">World</a></li>
+    <li><a href="business.html">Business</a></li>
+    <li><a href="market.html">Market</a></li>
+    <li><a href="technology.html">Technology</a></li>
+    <li><a href="sports.html">Sports</a></li>
+    <li><a href="health.html">Health</a></li>
+    <li><a href="education.html">Education</a></li>
+  </ul>
 
   <div class="search-btn">
+    <i class="fas fa-search"></i>
+  </div>
 
-  <i class="fas fa-search"></i>
+  <div class="search-box" id="searchBox">
+    <input type="text" id="searchInput" placeholder="Search news...">
+  </div>
 
+  <a href="login.html" class="login-btn">Login</a>
+  <a href="signup.html" class="signup-btn">Sign Up</a>
 </div>
 
-    <!-- SEARCH BOX -->
-
-<div class="search-box" id="searchBox">
-
-  <input
-  type="text"
-  id="searchInput"
-  placeholder="Search news...">
-
-</div>
-
-  <!-- LOGIN BUTTON -->
-
-<a href="login.html"
-class="login-btn">
-
-  Login
-
-</a>
-
-<!-- SIGNUP BUTTON -->
-
-<a href="signup.html"
-class="signup-btn">
-
-  Sign Up
-
-</a>
-
-</div>
-
-      <div class="menu-btn" id="menuBtn">
-        ☰
-      </div>
-
-    </div>
-
-  </nav>
+</nav>
 
   <!-- HERO SECTION -->
 
@@ -266,11 +223,15 @@ class="signup-btn">
   </section>
 
   <section class="latest-news">
-  <h2>Latest News</h2>
 
-  <div id="storiesContainer" class="news-grid">
-    <!-- News cards will appear here -->
-  </div>
+    <h2 class="section-title">
+        Latest <span>News</span>
+    </h2>
+
+    <div id="storiesContainer" class="stories">
+        <!-- Dynamic news will load here -->
+    </div>
+
 </section>
 
   <!-- NEWSLETTER -->
