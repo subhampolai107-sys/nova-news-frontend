@@ -1,6 +1,6 @@
 async function loadNews() {
   try {
-    const response = await fetch("https://nova-news-backend.onrender.com");
+    const response = await fetch("https://nova-news-backend.onrender.com/api/articles");
     const articles = await response.json();
 
     const container = document.getElementById('storiesContainer');
@@ -62,7 +62,7 @@ async function loadTrending() {
   if (!trendingContainer) return;
 
   try {
-    const response = await fetch("https://nova-news-backend.onrender.com/trending");
+    const response = await fetch("https://nova-news-backend.onrender.com/api/articles/trending");
     const articles = await response.json();
 
     trendingContainer.innerHTML = '';
