@@ -53,3 +53,41 @@ async function loadNews() {
 }
 
 loadNews();
+// ===============================
+// TRENDING NEWS
+// ===============================
+
+async function loadTrending() {
+  const trendingContainer = document.getElementById("trendingContainer");
+  if (!trendingContainer) return;
+
+  try {
+    const response = await fetch("https://nova-news-backend.onrender.com/trending");
+    const articles = await response.json();
+
+    trendingContainer.innerHTML = '';
+
+    articles.forEach(article => {
+      const card = document.createElement("div");
+      card.onclick = () => {
+        window.location.href = `article.html?id=${article._id}`;
+      };
+      card.className = "card";
+
+      card.innerHTML = `
+        <img src="${article.imageUrl || 'images/news1.jpg'}" alt="${article.title}">
+        <div class="card-content">
+          <div class="tag">${article.category ? article.category.toUpperCase() : 'NEWS'}</div>
+          <h3>${article.title}</h3>
+          <p>${article.description}</p>
+        </div>
+      `;
+
+      trendingContainer.appendChild(card);
+    });
+  } catch (err) {
+    console.error("Trending load karne me error:", err);
+  }
+}
+
+loadTrending();
