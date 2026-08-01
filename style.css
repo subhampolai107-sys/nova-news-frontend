@@ -1680,3 +1680,10 @@ table td{
     z-index:2000;
     transition:width 0.1s ease-out;
 }
+.reading-time{
+    display:block;
+    margin-top:10px;
+    color:#D4A437;
+    font-size:13px;
+    font-weight:600;
+}
