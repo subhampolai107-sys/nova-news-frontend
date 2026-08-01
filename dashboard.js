@@ -17,7 +17,7 @@ if (dashboardNewsForm) {
 
         try {
 
-            const response = await fetch("http://localhost:5000/api/news", {
+            const response = await fetch(`https://nova-news-backend.onrender.com/api/articles/${articleId}`);
 
                 method: "POST",
 

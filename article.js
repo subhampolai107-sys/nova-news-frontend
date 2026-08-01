@@ -7,13 +7,6 @@ async function loadArticle() {
     if (!articleId) {
         document.getElementById("articleTitle").textContent = "Article Not Found";
         return;
-        const words = article.description.trim().split(/\s+/).length;
-const readingTime = Math.ceil(words / 200);
-
-const readingTimeElement = document.getElementById("articleReadingTime");
-if (readingTimeElement) {
-    readingTimeElement.textContent = `📖 ${readingTime} min read`;
-}
     }
 
     try {
@@ -42,6 +35,15 @@ if (readingTimeElement) {
         document.getElementById("articleDescription").textContent =
             article.description;
 
+        // Reading Time
+        const words = article.description.trim().split(/\s+/).length;
+        const readingTime = Math.ceil(words / 200);
+
+        const readingTimeElement = document.getElementById("articleReadingTime");
+        if (readingTimeElement) {
+            readingTimeElement.textContent = `📖 ${readingTime} min read`;
+        }
+
     } catch (error) {
 
         console.error(error);
@@ -54,6 +56,7 @@ if (readingTimeElement) {
 }
 
 loadArticle();
+
 // ===============================
 // READING PROGRESS BAR
 // ===============================
