@@ -10,7 +10,6 @@ if (dashboardNewsForm) {
 
         e.preventDefault();
 
-        // GET FORM VALUES
         const title = document.getElementById("dashboardTitle").value;
         const image = document.getElementById("dashboardImage").value;
         const description = document.getElementById("dashboardDescription").value;
@@ -49,16 +48,11 @@ if (dashboardNewsForm) {
             }
 
             alert(result.message);
-
-            // CLEAR FORM
             dashboardNewsForm.reset();
 
         } catch (error) {
-
             console.error(error);
-
             alert("Unable to connect to backend server.");
-
         }
 
     });

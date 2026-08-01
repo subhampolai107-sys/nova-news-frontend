@@ -2,6 +2,8 @@ const newsForm = document.getElementById('newsForm');
 const submitBtn = newsForm.querySelector('button[type="submit"]');
 let editingArticleId = null; // agar null hai matlab naya article add ho raha hai
 
+const API_BASE = 'https://nova-news-backend.onrender.com/api/articles';
+
 // FORM SUBMIT — Add ya Update dono handle karega
 newsForm.addEventListener('submit', async function (e) {
   e.preventDefault();
@@ -20,8 +22,8 @@ newsForm.addEventListener('submit', async function (e) {
 
   const isEditing = editingArticleId !== null;
   const url = isEditing
-    ? `http://localhost:5000/api/articles/${editingArticleId}`
-    : 'http://localhost:5000/api/articles';
+    ? `${API_BASE}/${editingArticleId}`
+    : API_BASE;
   const method = isEditing ? 'PUT' : 'POST';
 
   try {
@@ -57,7 +59,7 @@ async function loadArticlesList() {
   if (!container) return;
 
   try {
-    const response = await fetch('http://localhost:5000/api/articles');
+    const response = await fetch(API_BASE);
     const articles = await response.json();
 
     container.innerHTML = '';
@@ -96,7 +98,7 @@ async function loadArticlesList() {
 
         const token = localStorage.getItem('token');
         try {
-          const response = await fetch(`http://localhost:5000/api/articles/${btn.dataset.id}`, {
+          const response = await fetch(`${API_BASE}/${btn.dataset.id}`, {
             method: 'DELETE',
             headers: { 'Authorization': 'Bearer ' + token }
           });
