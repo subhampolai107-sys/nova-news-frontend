@@ -14,26 +14,39 @@ if (dashboardNewsForm) {
         const title = document.getElementById("dashboardTitle").value;
         const image = document.getElementById("dashboardImage").value;
         const description = document.getElementById("dashboardDescription").value;
+        const category = document.getElementById("dashboardCategory")
+            ? document.getElementById("dashboardCategory").value
+            : "general";
+
+        const token = localStorage.getItem("token");
+
+        if (!token) {
+            alert("You must be logged in as admin to post news.");
+            return;
+        }
 
         try {
 
-            const response = await fetch(`https://nova-news-backend.onrender.com/api/articles/${articleId}`);
-
+            const response = await fetch("https://nova-news-backend.onrender.com/api/articles", {
                 method: "POST",
-
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + token
                 },
-
                 body: JSON.stringify({
                     title,
-                    image,
-                    description
+                    imageUrl: image,
+                    description,
+                    category
                 })
-
             });
 
             const result = await response.json();
+
+            if (!response.ok) {
+                alert(result.error || "Failed to post article.");
+                return;
+            }
 
             alert(result.message);
 
@@ -66,11 +79,8 @@ if (generateBtn) {
         const topic = document.getElementById("aiTopic").value;
 
         if (topic.trim() === "") {
-
             alert("Please enter a news topic.");
-
             return;
-
         }
 
         const aiTitle =
@@ -82,7 +92,6 @@ if (generateBtn) {
             " continues growing rapidly across global industries and digital platforms.";
 
         document.getElementById("dashboardTitle").value = aiTitle;
-
         document.getElementById("dashboardDescription").value = aiDescription;
 
     });

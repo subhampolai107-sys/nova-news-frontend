@@ -1,6 +1,6 @@
 async function loadNews() {
   try {
-    const response = await fetch('http://localhost:5000/api/articles');
+    const response = await fetch(`https://nova-news-backend.onrender.com/api/articles/${articleId}`);
     const articles = await response.json();
 
     const container = document.getElementById('storiesContainer');
