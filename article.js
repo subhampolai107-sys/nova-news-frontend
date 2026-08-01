@@ -7,12 +7,19 @@ async function loadArticle() {
     if (!articleId) {
         document.getElementById("articleTitle").textContent = "Article Not Found";
         return;
+        const words = article.description.trim().split(/\s+/).length;
+const readingTime = Math.ceil(words / 200);
+
+const readingTimeElement = document.getElementById("articleReadingTime");
+if (readingTimeElement) {
+    readingTimeElement.textContent = `📖 ${readingTime} min read`;
+}
     }
 
     try {
 
         // Fetch article from backend
-        const response = await fetch(`http://localhost:5000/api/articles/${articleId}`);
+        const response = await fetch(`https://nova-news-backend.onrender.com/api/articles/${articleId}`);
 
         const article = await response.json();
 
