@@ -47,3 +47,18 @@ async function loadArticle() {
 }
 
 loadArticle();
+// ===============================
+// READING PROGRESS BAR
+// ===============================
+
+window.addEventListener("scroll", function () {
+  const progressBar = document.getElementById("readingProgressBar");
+  if (!progressBar) return;
+
+  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+  const scrollPercent = (scrollTop / scrollHeight) * 100;
+
+  progressBar.style.width = scrollPercent + "%";
+});
