@@ -26,8 +26,14 @@ async function loadArticle() {
         document.getElementById("articleImage").src =
             article.imageUrl || "images/news1.jpg";
 
-        document.getElementById("articleAuthor").textContent =
-            article.author || "NOVA NEWS";
+        const authorName = article.author || "NOVA NEWS";
+    const authorElement = document.getElementById("articleAuthor");
+    authorElement.textContent = authorName;
+    authorElement.style.cursor = "pointer";
+    authorElement.style.textDecoration = "underline";
+    authorElement.onclick = () => {
+       window.location.href = `author.html?name=${encodeURIComponent(authorName)}`;
+    };
 
         document.getElementById("articleDate").textContent =
             new Date(article.createdAt).toLocaleDateString();
